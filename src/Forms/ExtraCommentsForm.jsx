@@ -3,36 +3,39 @@ import { useSelector, useDispatch } from 'react-redux'
 
 
 
-function ExtraCommentsForm () {
+function ExtraCommentsForm() {
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-    const [extraComments, setExtraComments] = useState('')
+  const [extraComments, setExtraComments] = useState('')
 
-    const handleComments = (event) => {
-        setExtraComments(event.target.value);
-      }
+  const handleComments = (event) => {
+    setExtraComments(event.target.value);
+  }
 
-    const addComment = (event) => {
-        event.preventDefault();
+  const addComment = (event) => {
+    event.preventDefault();
 
-        dispatch({
-            type: 'ADD_EXTRA_COMMENTS',
-            payload: extraComments
-        })
-    }
+    dispatch({
+      type: 'ADD_EXTRA_COMMENTS',
+      payload: extraComments
+    })
+  }
 
-    return (
-        <form onSubmit={(event) => addComment(event)}>
-      <input
-        onChange={handleComments}
-        type='text'
-        placeholder='Comments'
-      />
+  return (
+    <>
+      <h2>Any extra comments from today?</h2>
+      <form onSubmit={(event) => addComment(event)}>
+        <input
+          onChange={handleComments}
+          type='text'
+          placeholder='answer here'
+        />
 
-      <button type='submit'>Next</button>
-    </form>
-    )
+        <button type='submit'>Next</button>
+      </form>
+    </>
+  )
 }
 
 export default ExtraCommentsForm

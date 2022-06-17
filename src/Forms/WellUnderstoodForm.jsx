@@ -9,7 +9,7 @@ function WellUnderstoodForm () {
 
     const [howWellUnderstood, setHowWellUnderstood] = useState('')
 
-    const handleComments = (event) => {
+    const handleWellUnderstoodForm = (event) => {
         setHowWellUnderstood(event.target.value);
       }
 
@@ -23,15 +23,19 @@ function WellUnderstoodForm () {
     }
 
     return (
+      <>
+      <h2>How well are you understanding the content?</h2>
         <form onSubmit={(event) => addWellUnderstood(event)}>
       <input
-        onChange={handleComments}
+        onChange={handleWellUnderstoodForm}
         type='text'
-        placeholder='Comments'
+        placeholder='answer here'
+        required
       />
 
       <button type='submit'>Next</button>
     </form>
+    </>
     )
 }
 

@@ -23,15 +23,19 @@ function HowWellSupported () {
     }
 
     return (
+      <>
+      <h2>How well are you being supported?</h2>
         <form onSubmit={(event) => addComment(event)}>
       <input
         onChange={handleHowWellSupported}
         type='text'
-        placeholder='Comments'
+        placeholder='answer here'
+        required
       />
 
       <button type='submit'>Next</button>
     </form>
+    </>
     )
 }
 

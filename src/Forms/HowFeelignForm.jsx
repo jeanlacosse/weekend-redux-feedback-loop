@@ -3,36 +3,40 @@ import { useSelector, useDispatch } from 'react-redux'
 
 
 
-function ExtraCommentsForm () {
+function HowWellFeelingTodayForm() {
 
     const dispatch = useDispatch()
 
-    const [extraComments, setExtraComments] = useState('')
+    const [howWellFeelingToday, setHowWellFeelingToday] = useState('')
 
-    const handleComments = (event) => {
-        setExtraComments(event.target.value);
-      }
+    const handleHowWellFeeling = (event) => {
+        setHowWellFeelingToday(event.target.value);
+    }
 
-    const addComment = (event) => {
+    const addHowWellFeelingToday = (event) => {
         event.preventDefault();
 
         dispatch({
-            type: 'ADD_EXTRA_COMMENTS',
-            payload: extraComments
+            type: 'ADD_HOW_WELL_FEELING_TODAY',
+            payload: howWellFeelingToday
         })
     }
 
     return (
-        <form onSubmit={(event) => addComment(event)}>
-      <input
-        onChange={handleComments}
-        type='text'
-        placeholder='Comments'
-      />
+        <>
+            <h2>How well are you feeling today?</h2>
+            <form onSubmit={(event) => addHowWellFeelingToday(event)}>
+                <input
+                    onChange={handleHowWellFeeling}
+                    type='text'
+                    placeholder='answer here'
+                    required
+                />
 
-      <button type='submit'>Next</button>
-    </form>
+                <button type='submit'>Next</button>
+            </form>
+        </>
     )
 }
 
-export default ExtraCommentsForm
+export default HowWellFeelingTodayForm

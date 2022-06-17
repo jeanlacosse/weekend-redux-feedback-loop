@@ -35,9 +35,9 @@ const howWellSupported = (state = [], action) => {
     return state;
 }
 
-const extraComments = (state = [], action) => {
+const howWellFeelingToday = (state = [], action) => {
     switch (action.type) {
-        case 'ADD_EXTRA_COMMENTS':
+        case 'ADD_HOW_WELL_FEELING_TODAY':
             return action.payload
     }
     return state;
@@ -49,7 +49,7 @@ const storeInstance = createStore(
         extraComments,
         howWellUnderstood,
         howWellSupported,
-        
+        howWellFeelingToday
     }),
     applyMiddleware(logger)
 );
