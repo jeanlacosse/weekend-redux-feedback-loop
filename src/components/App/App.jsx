@@ -2,6 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
+// router imports
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
+// components
+
+
 function App() {
 
   return (
