@@ -3,29 +3,29 @@ import { useSelector, useDispatch } from 'react-redux'
 
 
 
-function ExtraCommentsForm () {
+function HowWellSupported () {
 
     const dispatch = useDispatch()
 
-    const [extraComments, setExtraComments] = useState('')
+    const [howSupported, setHowSupported] = useState('')
 
-    const handleComments = (event) => {
-        setExtraComments(event.target.value);
+    const handleHowWellSupported = (event) => {
+        setHowSupported(event.target.value);
       }
 
     const addComment = (event) => {
         event.preventDefault();
 
         dispatch({
-            type: 'ADD_EXTRA_COMMENTS',
-            payload: extraComments
+            type: 'ADD-HOW-WELL-SUPPORTED',
+            payload: howSupported
         })
     }
 
     return (
         <form onSubmit={(event) => addComment(event)}>
       <input
-        onChange={handleComments}
+        onChange={handleHowWellSupported}
         type='text'
         placeholder='Comments'
       />
@@ -35,4 +35,4 @@ function ExtraCommentsForm () {
     )
 }
 
-export default ExtraCommentsForm
+export default HowWellSupported

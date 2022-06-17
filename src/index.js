@@ -27,9 +27,9 @@ const howWellUnderstood = (state = [], action) => {
     return state;
 }
 
-const extraComments = (state = [], action) => {
+const howWellSupported = (state = [], action) => {
     switch (action.type) {
-        case 'ADD_EXTRA_COMMENTS':
+        case 'ADD-HOW-WELL-SUPPORTED':
             return action.payload
     }
     return state;
@@ -47,7 +47,9 @@ const storeInstance = createStore(
 
     combineReducers({
         extraComments,
-        howWellUnderstood
+        howWellUnderstood,
+        howWellSupported,
+        
     }),
     applyMiddleware(logger)
 );
