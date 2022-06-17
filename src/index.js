@@ -18,10 +18,36 @@ const extraComments = (state = [], action) => {
     return state;
 }
 
+
+const howWellUnderstood = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD_WELL_UNDERSTOOD':
+            return action.payload
+    }
+    return state;
+}
+
+const extraComments = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD_EXTRA_COMMENTS':
+            return action.payload
+    }
+    return state;
+}
+
+const extraComments = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD_EXTRA_COMMENTS':
+            return action.payload
+    }
+    return state;
+}
+
 const storeInstance = createStore(
 
     combineReducers({
         extraComments,
+        howWellUnderstood
     }),
     applyMiddleware(logger)
 );

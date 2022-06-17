@@ -22,14 +22,6 @@ function ExtraCommentsForm () {
         })
     }
 
-    // TODO
-    // create useState for form value
-    // create html form to fill out
-    // send state in payload w/ dispatch
-    // create store in index.js
-    // add action.payload to store in function
-   
-
     return (
         <form onSubmit={(event) => addComment(event)}>
       <input
