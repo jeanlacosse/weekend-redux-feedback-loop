@@ -9,11 +9,19 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+// Reducers
+const extraComments = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD_EXTRA_COMMENTS':
+            return action.payload
+    }
+    return state;
+}
+
 const storeInstance = createStore(
+
     combineReducers({
-        products,
-        cart,
-        activeProduct
+        extraComments,
     }),
     applyMiddleware(logger)
 );
