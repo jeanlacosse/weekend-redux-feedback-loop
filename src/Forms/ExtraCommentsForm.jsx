@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory, Link} from 'react-router-dom';
 
 
 function ExtraCommentsForm() {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const [extraComments, setExtraComments] = useState('')
 
@@ -20,6 +21,8 @@ function ExtraCommentsForm() {
       type: 'ADD_EXTRA_COMMENTS',
       payload: extraComments
     })
+
+    history.push('/display-feedback');
   }
 
   return (

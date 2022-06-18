@@ -43,6 +43,8 @@ const howWellFeelingToday = (state = [], action) => {
     return state;
 }
 
+// Store redux
+
 const storeInstance = createStore(
 
     combineReducers({

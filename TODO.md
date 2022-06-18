@@ -15,10 +15,10 @@
         [x] needs validation
             [x] value must be proveided and conveyed to user
                 [x] all except comments, no validation here
-    [] let user review their feedback
-        [] can't make changes here
-        [] all form inputs stored in client side state
-            [] only post final results to DB
+    [x] let user review their feedback
+        [x] can't make changes here
+        [x] all form inputs stored in client side state
+            [x] only post final results to DB
 
 [] submition
     [] button to submit
@@ -28,5 +28,5 @@
         [] should not need to create a GET though
 
 components
-    []form 1, 2, 3, 4
-    [] review page
+    [x]form 1, 2, 3, 4
+    [x] review page 
