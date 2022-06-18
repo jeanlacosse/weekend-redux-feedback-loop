@@ -10,6 +10,7 @@ function DisplayFeedback() {
     const extraComments = useSelector(store => store.extraComments);
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const submitFeedback = () => {
         axios.post('/submitFeedback', {
@@ -19,6 +20,9 @@ function DisplayFeedback() {
             extraComments
         })
         .then (() => {
+            dispatch({
+                type: 'RESET_VALUES'
+            })
             history.push('/success-page')
         })
         .catch((err) => {

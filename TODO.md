@@ -4,7 +4,7 @@
     [x] set up db w/ sql file
         [x]prime_feedback
 
-[] feedback form - multi part
+[x] feedback form - multi part
     [x] how feeling
     [x] how well understand content
     [x] how well supported?
@@ -20,13 +20,16 @@
         [x] all form inputs stored in client side state
             [x] only post final results to DB
 
-[] submition
-    [] button to submit
-        [] send to submission success page
-    [] sends to DB in axios POST
-    [] create a new server router for this
-        [] should not need to create a GET though
+[x] submition
+    [x] button to submit
+        [x] send to submission success page
+    [x] sends to DB in axios POST
+    [x] create a new server router for this
+        [x] should not need to create a GET though
 
 components
     [x]form 1, 2, 3, 4
     [x] review page 
+
+STRETCH
+    []
