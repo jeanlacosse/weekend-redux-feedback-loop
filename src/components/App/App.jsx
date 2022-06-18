@@ -11,6 +11,7 @@ import HowWellFeelingTodayForm from '../../Forms/HowFeelignForm';
 import HowWellSupported from '../../Forms/SupportedForm';
 import WellUnderstoodForm from '../../Forms/WellUnderstoodForm';
 import DisplayFeedback from '../FeedbackPage/FeedbackPage';
+import SuccessPage from '../SuccessPage/SucceesPage';
 
 function App() {
 
@@ -22,24 +23,28 @@ function App() {
       </header>
       <Router>
 
-        <Route>
+        <Route exact path="/">
           <HowWellFeelingTodayForm />
         </Route>
 
-        <Route>
+        <Route exact path="/well-understood">
           <WellUnderstoodForm />
         </Route>
 
-        <Route>
+        <Route exact path="/well-supported">
           <HowWellSupported />
         </Route>
 
-        <Route>
+        <Route exact path="/extra-comments">
           <ExtraCommentsForm />
         </Route>
 
-        <Route>
+        <Route exact path="/display-feedback">
           <DisplayFeedback />
+        </Route>
+
+        <Route exact path="/success-page">
+          <SuccessPage />
         </Route>
         
       </Router>

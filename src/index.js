@@ -14,6 +14,8 @@ const extraComments = (state = [], action) => {
     switch (action.type) {
         case 'ADD_EXTRA_COMMENTS':
             return action.payload
+        case 'RESET_VALUES':
+            return state = []
     }
     return state;
 }
@@ -23,6 +25,8 @@ const howWellUnderstood = (state = [], action) => {
     switch (action.type) {
         case 'ADD_WELL_UNDERSTOOD':
             return action.payload
+        case 'RESET_VALUES':
+            return state = []
     }
     return state;
 }
@@ -31,6 +35,8 @@ const howWellSupported = (state = [], action) => {
     switch (action.type) {
         case 'ADD-HOW-WELL-SUPPORTED':
             return action.payload
+        case 'RESET_VALUES':
+            return state = []
     }
     return state;
 }
@@ -39,9 +45,13 @@ const howWellFeelingToday = (state = [], action) => {
     switch (action.type) {
         case 'ADD_HOW_WELL_FEELING_TODAY':
             return action.payload
+        case 'RESET_VALUES':
+            return state = []
     }
     return state;
 }
+
+// Store redux
 
 const storeInstance = createStore(
 
