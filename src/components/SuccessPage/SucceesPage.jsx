@@ -73,11 +73,12 @@ function SuccessPage() {
 
     return (
         // displaying the averages grabbed from the db into the local state
+        // these are turned to numbers and only allows two decimal places
         <>
             <h2>Submission Successful! </h2>
-            <h3>The class avg for understanding is: {ratingAverages.avgUnderstanding}</h3>
-            <h3>The class avg for feeling is: {ratingAverages.avgFeeling}</h3>
-            <h3>The class avg for support is: {ratingAverages.avgSupport}</h3>
+            <h3>The class avg for understanding is: {Number(ratingAverages.avgUnderstanding).toFixed(2)}</h3>
+            <h3>The class avg for feeling is: {Number(ratingAverages.avgFeeling).toFixed(2)}</h3>
+            <h3>The class avg for support is: {Number(ratingAverages.avgSupport).toFixed(2)}</h3>
             <h4>Scan QR code to let others rate as well</h4>
             <img src={qrCode} alt="" />
             <button
