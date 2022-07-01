@@ -45,16 +45,38 @@ app.get('/qrCode', (req, res) => {
             data: 'http://localhost:3000/#/'
         }
     })
-        
+
         .then(apiRes => {
             console.log('api res is ', apiRes.request.res.responseUrl);
-            
+
             res.send({
                 qrCode: apiRes.request.res.responseUrl
             })
         })
         .catch(err => {
             console.error('error in sending api req', err)
+        })
+})
+
+// here is where i am getting the rating average from the server
+app.get('/getAvgRating', (req, res) => {
+    const sqlQuery = `
+    
+SELECT
+    AVG(feedback.understanding) AS understanding_avg,
+    AVG(feedback.feeling) AS feeling_avg,
+    AVG(feedback.support) AS support_avg
+FROM feedback;
+    `;
+
+    pool.query(sqlQuery)
+        .then(result => {
+            console.log('result is', result.rows);
+            res.send(result.rows[0]);
+        })
+        .catch(err => {
+            console.error('error in getAvgRating', err);
+            res.sendStatus(500);
         })
 })
 
