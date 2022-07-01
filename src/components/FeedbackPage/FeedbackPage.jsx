@@ -12,6 +12,13 @@ function DisplayFeedback() {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    /* QR TODO
+    axios.get to qr api
+    set response to img tag on this page
+    data will send to feedback home
+    add extra data to db
+    */
+
     const submitFeedback = () => {
         axios.post('/submitFeedback', {
             howWellFeelingToday,
