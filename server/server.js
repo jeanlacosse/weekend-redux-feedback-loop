@@ -42,7 +42,7 @@ app.get('/qrCode', (req, res) => {
         method: 'GET',
         url: 'https://api.qrserver.com/v1/create-qr-code/',
         params: {
-            data: 'http://localhost:3000/#/'
+            data: 'https://tragically-goose-78342.herokuapp.com/#/'
         }
     })
 
